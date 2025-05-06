@@ -99,3 +99,12 @@ body {
   font-size: 1.2em;
   font-weight: bold;
 }
+@keyframes floatSlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-floating {
+  animation: floatSlow 10s ease-in-out infinite;
+}
