@@ -99,12 +99,75 @@ body {
   font-size: 1.2em;
   font-weight: bold;
 }
-@keyframes floatSlow {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.07;
+  filter: blur(0.5px);
+}
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+  filter: blur(0.6px);
 }
 
-.animate-floating {
-  animation: floatSlow 10s ease-in-out infinite;
+/* Animacione të ndryshme për secilën ikonë */
+@keyframes bubble1 {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-15px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
 }
+@keyframes bubble2 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}
+@keyframes bubble3 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-15px); }
+  100% { transform: translateX(0); }
+}
+@keyframes bubble4 {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(-15px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+@keyframes bubble5 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0); }
+}
+@keyframes bubble6 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+@keyframes bubble7 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+@keyframes bubble8 {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(25px) translateX(-10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+@keyframes bubble9 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+/* Aplikimi i animacioneve */
+.animate-bubble1 { animation: bubble1 12s ease-in-out infinite; }
+.animate-bubble2 { animation: bubble2 10s ease-in-out infinite; }
+.animate-bubble3 { animation: bubble3 14s ease-in-out infinite; }
+.animate-bubble4 { animation: bubble4 11s ease-in-out infinite; }
+.animate-bubble5 { animation: bubble5 13s ease-in-out infinite; }
+.animate-bubble6 { animation: bubble6 15s ease-in-out infinite; }
+.animate-bubble7 { animation: bubble7 16s ease-in-out infinite; }
+.animate-bubble8 { animation: bubble8 12s ease-in-out infinite; }
+.animate-bubble9 { animation: bubble9 18s ease-in-out infinite; }
