@@ -21,18 +21,45 @@
   </head>
   <body class="bg-gray-100">
     <!-- Navbar -->
-    <header class="bg-white shadow-lg sticky top-0 z-50" style="background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));">
+    <header class="bg-gray-900 sticky top-0 z-50 shadow-lg">
       <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <!-- Titulli -->
         <h1 class="text-2xl font-bold text-blue-100">Ernis Pllana</h1>
-        <nav class="space-x-6">
-          <a href="#about" class="text-gray-400 hover:text-blue-600">About</a>
-          <a href="#services" class="text-gray-400 hover:text-blue-600">Services</a>
-          <a href="#projects" class="text-gray-400 hover:text-blue-600">Projects</a>
-          <a href="#testimonials" class="text-gray-400 hover:text-blue-600">Testimonials</a>
-          <a href="#contact" class="text-gray-400 hover:text-blue-600">Contact</a>
+    
+        <!-- Nav Desktop + Hamburger -->
+        <nav class="flex items-center">
+          <!-- Menyja për desktop -->
+          <div class="hidden md:flex space-x-6" id="desktop-menu">
+            <a href="#about" class="text-gray-400 hover:text-blue-600">About</a>
+            <a href="#services" class="text-gray-400 hover:text-blue-600">Services</a>
+            <a href="#projects" class="text-gray-400 hover:text-blue-600">Projects</a>
+            <a href="#testimonials" class="text-gray-400 hover:text-blue-600">Testimonials</a>
+            <a href="#contact" class="text-gray-400 hover:text-blue-600">Contact</a>
+          </div>
+    
+          <!-- Hamburger Button -->
+          <button id="hamburger" class="md:hidden focus:outline-none ml-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </nav>
       </div>
+    
+      <!-- Mobile Menu -->
+      <div id="mobile-menu"
+        class="hidden md:hidden bg-gray-900 py-4 px-6 space-y-4 shadow-lg absolute w-full z-50 top-full left-0 right-0">
+        <a href="#about" class="block text-gray-400 hover:text-blue-600 px-4 py-2">About</a>
+        <a href="#services" class="block text-gray-400 hover:text-blue-600 px-4 py-2">Services</a>
+        <a href="#projects" class="block text-gray-400 hover:text-blue-600 px-4 py-2">Projects</a>
+        <a href="#testimonials" class="block text-gray-400 hover:text-blue-600 px-4 py-2">Testimonials</a>
+        <a href="#contact" class="block text-gray-400 hover:text-blue-600 px-4 py-2">Contact</a>
+      </div>
     </header>
+    
+
 
     <!-- Hero Section -->
     <section class="relative bg-gray-900 text-white py-20 overflow-hidden">
@@ -40,7 +67,7 @@
       <div class="absolute inset-0 z-0 pointer-events-none">
         <img src="icons8-html (1).svg" class="bubble left-10 top-10 animate-bubble1" />
         <img src="icons8-css (1).svg" class="bubble right-16 top-20 animate-bubble2" />
-        <img src="mongodb.png" class="bubble left-10 bottom-16 animate-bubble7" />
+        <img src="mongodbb.png" class="bubble left-10 bottom-16 animate-bubble7" />
         <img src="icons8-react-native (1).svg" class="bubble right-1/4 top-1/3 animate-bubble4" />
         <img src="icons8-express-js.svg" class="bubble left-1/3 bottom-10 animate-bubble5" />
         <img src="icons8-tailwind-css.svg" class="bubble right-10 bottom-32 animate-bubble6" />
@@ -53,10 +80,12 @@
       <!-- Foreground content -->
       <div class="relative z-10 flex flex-wrap items-center max-w-6xl w-full px-4 mx-auto">
         <div class="w-full md:w-1/2 mb-8 md:mb-0">
-          <img src="ernis.png" alt="Ernis Pllana" class="max-w-full h-auto rounded-xl shadow-lg">
+          <img id="ernis-image" src="ernis.png" alt="Ernis Pllana" class="max-w-full h-auto rounded-xl shadow-lg">
         </div>
         <div class="w-full md:w-1/2 text-center md:text-left">
-          <h2 class="text-5xl font-extrabold mb-4">Hello, I'm Ernis Pllana</h2>
+          <h2 class="text-5xl [@media(max-width:600px)]:text-3xl font-extrabold mb-4">
+            Hello, I'm Ernis Pllana
+          </h2>
           <p class="text-lg mb-6">
             A Software Developer, System & App Manager, and Graphic/UI Designer 
             dedicated to building reliable systems and stunning digital experiences.
@@ -78,10 +107,10 @@
           <!-- Teksti -->
           <div class="md:w-2/3">
             <h3 class="text-4xl font-bold mb-6 text-gray-900">About Me</h3>
-            <p class="text-lg text-gray-700 mb-4">
+            <p class="text-lg text-gray-700 mb-4" id="developer">
               I'm a developer and designer with a Bachelor's degree in Computer Science and Engineering, currently focused on building my own digital empire. I specialize in creating modern web applications, crafting engaging visuals, and helping businesses grow through technology.
             </p>
-            <p class="text-lg text-gray-700">
+            <p class="text-lg text-gray-700" id="into">
               Passionate about turning ideas into functional, beautiful digital solutions, I combine creativity and code to deliver clean, efficient, and user-friendly products.
             </p>
           </div>
@@ -240,27 +269,28 @@
     <section id="projects" class="bg-gray-200 py-20" style="margin-bottom: 50px;">
       <div class="container mx-auto text-center">
         <h3 class="text-4xl font-bold mb-10">More Projects</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
           <!-- Project 1 -->
-          <div class="relative group overflow-hidden rounded-lg h-72">
-            <img src="dashboard.png" alt="Project 1" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+          <div class="relative group overflow-hidden rounded-lg h-72 p-4 sm:p-6 md:p-8">
+            <img src="dashboard.png" alt="Project 1" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded-lg">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
               <p class="text-white text-lg">Marketing Dashboard</p>
             </div>
           </div>
     
           <!-- Project 2 -->
-          <div class="relative group overflow-hidden rounded-lg h-72">
-            <img src="ecomm.png" alt="Project 2" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+          <div class="relative group overflow-hidden rounded-lg h-72 p-4 sm:p-6 md:p-8">
+            <img src="ecomm.png" alt="Project 2" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded-lg">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
               <p class="text-white text-lg">E-commerce Platform</p>
             </div>
           </div>
     
           <!-- Project 3 -->
-          <div class="relative group overflow-hidden rounded-lg h-72">
-            <img src="schol.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110">
+          <div class="relative group overflow-hidden rounded-lg h-72 p-4 sm:p-6 md:p-8">
+            <img src="schol.png" alt="Project 3" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded-lg">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
               <p class="text-white text-lg">School Management System</p>
             </div>
@@ -277,7 +307,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-gray-100">
       <div class="container mx-auto text-center">
-        <h3 class="text-4xl font-bold mb-10">What Clients Say</h3>
+        <h3 class="text-4xl font-bold mb-10" id="what">What Clients Say</h3>
         <div class="swiper testimonials-slider">
           <div class="swiper-wrapper">
     
@@ -358,7 +388,7 @@
 
     <!-- Footer -->
     <footer>
-      <div class="logo">
+      <div class="logo" style="margin-bottom: 20px;">
           <img src="ep-removebg-preview.png" alt="" style="max-width: 120px; height:auto;">
           <h4 style="font-size:14px;">Creating modern web solutions for your business and brand!</h4>
           <div class="ikonat">
@@ -414,11 +444,7 @@
       display: flex;
       margin: 0 auto;
   }
-  .logo{
-      max-width: 350px;
-      margin-right: 120px;
-      color: white;
-  }
+ 
   .logo h4{
     color: white;
       font-size: 12px;
@@ -435,13 +461,7 @@
       width: 100%;
       height: auto;
   }
-  .link {
-    max-width: 250px;
-    width: 100%;
-    height: auto;
-    margin-right: 50px;
-    color: white;
-  }
+
 
   .link h2 {
     font-size: 16px;
@@ -449,13 +469,7 @@
     color: white;
   }
 
-  .pages {
-    max-width: 250px;
-    width: 100%;
-    height: auto;
-    margin-right: 50px;
-    color: white;
-  }
+ 
 
   .pages h2 {
     font-size: 16px;

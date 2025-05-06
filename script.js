@@ -4,7 +4,7 @@
     slidesPerView: 1,
     spaceBetween: 20,
     autoplay: {
-      delay: 2500,
+      delay: 2800,
       disableOnInteraction: true,
     },
     breakpoints: {
@@ -54,3 +54,8 @@
       });
     }
 
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden')});
